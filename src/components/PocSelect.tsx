@@ -9,7 +9,7 @@ const PocSelect = ({ options, value, onChange, error, helperText }) => {
         value={value || "empty"}
         onChange={onChange}
         error={error}
-        sx={{ width: "100%" }}
+        fullWidth
         renderValue={(value) => {
           if (value === "empty") {
             return <span style={{ color: "#A8B2BA" }}>--select--</span>;
