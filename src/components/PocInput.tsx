@@ -1,7 +1,7 @@
 import { TextField } from "@mui/material";
 
 const PocInput = (props) => {
-  return <TextField {...props} className="error" fullWidth />;
+  return <TextField {...props} fullWidth />;
 };
 
 export default PocInput;
