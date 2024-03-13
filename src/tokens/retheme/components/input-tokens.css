@@ -19,7 +19,7 @@
     --input-control-background: var(--interactive-states-02-default);
     --input-control-current: var(--selected-03);
     --input-control-selected: var(--interactive-control-02);
-    --input-control-border-color-selected: var(--border-color-08);
+    --input-control-border-color-selected: var(--neutral02-darkest);
     --input-control-border-color: var(--border-color-01);
     --input-control-border-color-alt: var(--border-color-04);
     --input-control-icon-button-selected: var(--interactive-control-04);
@@ -30,6 +30,7 @@
     --input-high-contrast-overlay: var(--interactive-overlay-01);
     --input-dark-color-overlay: var(--interactive-overlay-03);
     --input-container-border-color: var(--border-color-01);
+    --input-border-weight: 1.5;
 
 
     /* L2: Input Object States Tokens */ 
@@ -100,13 +101,13 @@
 /* VARIATION TOKENS */ 
 
 /*
---color-background-color: var(--input-background-color);
---color-swatch-height: var(--space-x-large);
---color-swatch-width: var(--space-x-large);
---color-swatch-border-radius: var(--border-radius-x-small);
---color-border-color: var(--input-container-border-color);
---color-border-radius: var(--border-radius-small);
---color-padding: var(--space-base);
+--color-picker-background-color: var(--input-background-color);
+--color-picker-swatch-height: var(--space-x-large);
+--color-picker-swatch-width: var(--space-x-large);
+--color-picker-swatch-border-radius: var(--border-radius-x-small);
+--color-picker-border-color: var(--input-container-border-color);
+--color-picker-border-radius: var(--border-radius-x-small);
+--color-picker-padding: var(--space-base);
 --input-background-color: var(--input-background-color);
 --label-text-color: var(--input-field-content-color);
 --label-padding-vertical: var(--space-xx-small);
@@ -114,7 +115,7 @@
 --label-tooltip-icon-color: var(--input-label-icon-color);
 --footnote-padding-vertical: var(--space-small);
 --footnote-padding-horizontal: var(--space-x-small);
---textbox-border-radius: var(--border-radius-small);
+--textbox-border-radius: var(--border-radius-x-small);
 --textbox-border-color: var(--field-border-color);
 --textbox-height: var(--size-x-large);
 --textbox-gap: var(--space-x-small);
@@ -126,10 +127,11 @@
 --textbox-padding-left: var(--space-x-small);
 --textbox-button-control-content-color: var(--input-value-content-color);
 --textbox-padding-vertical: var(--space-x-small);
---textbox-padding-right: var(--space-small);
 --textbox-button-control-border-radius: var(--border-radius-x-small);
+--textbox-padding-right: var(--space-small);
 --textbox-button-control-background-color: #FFFFFF;
 --textbox-popover-background-color: var(--ui-background-01);
+--textbox-border-weight: 2;
 --textbox-button-control-selected-content-color-interactive-display: var(--selected-display-icon);
 --value-padding-vertical: var(--space-small);
 --value-padding-horizontal: var(--space-small);
@@ -145,19 +147,20 @@
 --input-font-weight-placeholder: var(--font-weight-100);
 --input-text-color-placeholder: var(--input-placeholder-text-color);
 --select-input-background-color: var(--input-background-color);
---select-input-border-radius: var(--border-radius-small);
+--select-input-border-radius: var(--border-radius-x-small);
 --select-drawer-background-color: var(--input-background-color);
 --select-drawer-border-color: var(--field-border-color);
 --select-drawer-padding: var(--space-small);
---select-drawer-divider: var(--input-control-border-color);
+--select-drawer-divider: var(--input-border-color);
 --select-drawer-padding-select-all: var(--space-x-small);
+--select-border-weight: 1.5;
 --radio-control-background-color: var(--control-background-color-01);
 --radio-control-indicator--color: var(--control-indicator-color-01);
 --radio-control-border-color: var(--input-border-color);
 --radio-control-height: var(--input-control-height);
 --radio-control-width: var(--input-control-width);
---radio-group-gap-vertical: var(--space-base);
 --radio-option-gap: var(--space-small);
+--radio-group-gap-vertical: var(--space-base);
 --radio-group-gap-horizontal: var(--space-small);
 --radio-option-text-color: var(--input-value-content-color);
 --checkbox-control-background-color: var(--control-background-color-01);
@@ -182,14 +185,14 @@
 --switch-knob-background-color: var(--control-knob-background-color);
 --switch-border-color: var(--field-border-color);
 --switch-indicator-color: var(--input-control-selected);
---visual-picker-control-border-color: var(--input-border-color);
 --switch-overlay-color: var(--control-overlay);
+--visual-picker-control-border-color: var(--input-border-color);
 --visual-picker-control-content-color: var(--input-value-content-color);
 --switch-height: var(--size-large);
 --switch-width: var(--size-xx-large);
 --switch-border-radius: var(--border-radius-round);
---switch-knob-height: var(--size-medium);
 --switch-padding: var(--space-x-small);
+--switch-knob-height: var(--size-medium);
 --switch-knob-width: var(--size-medium);
 --date-picker-gap-vertical: var(--space-x-small);
 --date-picker-gap-horizontal: var(--space-small);
@@ -206,8 +209,8 @@
 --slider-background-color-filled: var(--input-control-color-03);
 --slider-knob-background-color: var(--knob-background-color);
 --slider-border-color: var(--input-border-color);
---slider-border-radius: var(--border-radius-base);
 --slider-knob-border-color: var(--input-control-border-color-alt);
+--slider-border-radius: var(--border-radius-base);
 --slider-knob-indicator-color: var(--input-control-color-03);
 --slider-knob-border-radius: var(--border-radius-round);
 --input-action-content-color: var(--input-value-content-color);

@@ -1,103 +1,100 @@
-/* See Color Picker file for two ideas for how we had built the tokens to work, please do not feel obligated to use them, just offering them as ideas to help illustrate how they work*/ 
+/* See Color Picker file for two ideas for how we had built the tokens to work, please do not feel obligated to use them, just offering them as ideas to help illustrate how they work*/
 
 :root {
+  /* L1: Base Input Tokens */
 
-    /* L1: Base Input Tokens */
+  --input-field-content-color: var(--text-color-02);
+  --input-field-content-color-error: var(--text-color-06);
+  --input-value-content-color: var(--text-color-01);
+  --input-placeholder-text-color: var(--text-color-03);
+  --input-background-color: var(--interactive-states-04-default);
+  --input-border-color: var(--interactive-border-interactive-border);
+  --input-border-color-error: var(--border-color-05);
+  --input-interactive-display-icon: var(
+    --interactive-utility-display-on-interaction
+  );
+  --input-control-color-01: var(--interactive-control-content-01);
+  --input-control-color-02: var(--interactive-container);
+  --input-control-color-03: var(--interactive-control-02);
+  --input-control-color-04: var(--text-color-01);
+  --input-control-background: var(--interactive-states-02-default);
+  --input-control-current: var(--selected-03);
+  --input-control-selected: var(--interactive-control-02);
+  --input-control-border-color-selected: var(--border-color-08);
+  --input-control-border-color: var(--border-color-01);
+  --input-control-border-color-alt: var(--border-color-04);
+  --input-control-icon-button-selected: var(--interactive-control-04);
+  --input-control-height: 20;
+  --input-control-width: 20;
+  --input-container-background-color: var(--ui-background-02);
+  --input-label-icon-color: var(--interactive-control-02);
+  --input-high-contrast-overlay: var(--interactive-overlay-01);
+  --input-dark-color-overlay: var(--interactive-overlay-03);
+  --input-container-border-color: var(--border-color-01);
 
-    --input-field-content-color: var(--text-color-02);
-    --input-field-content-color-error: var(--text-color-06);
-    --input-value-content-color: var(--text-color-01);
-    --input-placeholder-text-color: var(--text-color-03);
-    --input-background-color: var(--interactive-states-04-default);
-    --input-border-color: var(--interactive-border-interactive-border);
-    --input-border-color-error: var(--border-color-05);
-    --input-interactive-display-icon: var(--interactive-utility-display-on-interaction);
-    --input-control-color-01: var(--interactive-control-content-01);
-    --input-control-color-02: var(--interactive-container);
-    --input-control-color-03: var(--interactive-control-02);
-    --input-control-color-04: var(--text-color-01);
-    --input-control-background: var(--interactive-states-02-default);
-    --input-control-current: var(--selected-03);
-    --input-control-selected: var(--interactive-control-02);
-    --input-control-border-color-selected: var(--border-color-08);
-    --input-control-border-color: var(--border-color-01);
-    --input-control-border-color-alt: var(--border-color-04);
-    --input-control-icon-button-selected: var(--interactive-control-04);
-    --input-control-height: 20;
-    --input-control-width: 20;
-    --input-container-background-color: var(--ui-background-02);
-    --input-label-icon-color: var(--interactive-control-02);
-    --input-high-contrast-overlay: var(--interactive-overlay-01);
-    --input-dark-color-overlay: var(--interactive-overlay-03);
-    --input-container-border-color: var(--border-color-01);
+  /* L2: Input Object States Tokens */
 
-
-    /* L2: Input Object States Tokens */ 
-
-    --field-border-color: var(--input-border-color);
-    --footnote-text-color: var(--input-field-content-color);
-    --field-border-weight: 1;
-    --control-background-color-01: var(--input-control-color-02);
-    --control-background-color-02: var(--input-control-background);
-    --control-background-color-03: var(--interactive-container-02);
-    --control-indicator-color-01: var(--input-control-color-02);
-    --control-indicator-color-02: var(--input-control-color-03);
-    --control-indicator-color-03: var(--input-control-background);
-    --control-knob-background-color: var(--input-control-color-01);
-    --control-text-color: var(--input-control-color-04);
-    --error-message-text: #FFFFFF00;
-    --selected-display-icon: var(--input-interactive-display-icon);
-    --input-control-action-background-color: var(--input-control-color-01);
-    --knob-background-color: var(--interactive-container);
-    --control-overlay: var(--input-high-contrast-overlay);
-
+  --field-border-color: var(--input-border-color);
+  --footnote-text-color: var(--input-field-content-color);
+  --field-border-weight: 1;
+  --control-background-color-01: var(--input-control-color-02);
+  --control-background-color-02: var(--input-control-background);
+  --control-background-color-03: var(--interactive-container-02);
+  --control-indicator-color-01: var(--input-control-color-02);
+  --control-indicator-color-02: var(--input-control-color-03);
+  --control-indicator-color-03: var(--input-control-background);
+  --control-knob-background-color: var(--input-control-color-01);
+  --control-text-color: var(--input-control-color-04);
+  --error-message-text: #ffffff00;
+  --selected-display-icon: var(--input-interactive-display-icon);
+  --input-control-action-background-color: var(--input-control-color-01);
+  --knob-background-color: var(--interactive-container);
+  --control-overlay: var(--input-high-contrast-overlay);
 }
 
+/* L2: Input Object States Tokens */
 
-    /* L2: Input Object States Tokens */ 
+.error {
+  --field-border-color: var(--input-border-color-error);
+  --footnote-text-color: var(--input-field-content-color);
+  --field-border-weight: 2;
+  --control-background-color-01: var(--input-control-color-02);
+  --control-background-color-02: var(--input-control-background);
+  --control-background-color-03: var(--interactive-container-02);
+  --control-indicator-color-01: var(--input-control-color-02);
+  --control-indicator-color-02: var(--input-control-color-03);
+  --control-indicator-color-03: var(--input-control-background);
+  --control-knob-background-color: var(--input-control-color-01);
+  --control-text-color: var(--input-control-color-04);
+  --error-message-text: var(--input-field-content-color-error);
+  --selected-display-icon: var(--input-interactive-display-icon);
+  --input-control-action-background-color: var(--input-control-color-01);
+  --knob-background-color: var(--interactive-control-content-01);
+  --control-overlay: var(--input-high-contrast-overlay);
+}
 
-    .error {
-        --field-border-color: var(--input-border-color-error);
-        --footnote-text-color: var(--input-field-content-color);
-        --field-border-weight: 2;
-        --control-background-color-01: var(--input-control-color-02);
-        --control-background-color-02: var(--input-control-background);
-        --control-background-color-03: var(--interactive-container-02);
-        --control-indicator-color-01: var(--input-control-color-02);
-        --control-indicator-color-02: var(--input-control-color-03);
-        --control-indicator-color-03: var(--input-control-background);
-        --control-knob-background-color: var(--input-control-color-01);
-        --control-text-color: var(--input-control-color-04);
-        --error-message-text: var(--input-field-content-color-error);
-        --selected-display-icon: var(--input-interactive-display-icon);
-        --input-control-action-background-color: var(--input-control-color-01);
-        --knob-background-color: var(--interactive-control-content-01);
-        --control-overlay: var(--input-high-contrast-overlay);
-    }
+.selected {
+  --field-border-color: var(--input-control-border-color-selected);
+  --footnote-text-color: var(--input-field-content-color);
+  --field-border-weight: 2;
+  --control-background-color-01: var(--input-control-selected);
+  --control-background-color-02: var(--input-control-selected);
+  --control-background-color-03: var(--input-control-icon-button-selected);
+  --control-indicator-color-01: var(--input-control-color-02);
+  --control-indicator-color-02: var(--input-control-color-03);
+  --control-indicator-color-03: var(--input-control-color-01);
+  --control-knob-background-color: var(--input-control-color-02);
+  --control-text-color: var(--input-control-color-02);
+  --error-message-text: #00000000;
+  --selected-display-icon: var(--input-value-content-color);
+  --input-control-action-background-color: var(
+    --input-control-icon-button-selected
+  );
+  --knob-background-color: var(--input-control-color-01);
+  --control-overlay: #ffffff00;
+}
 
-    .selected {
-        --field-border-color: var(--input-control-border-color-selected);
-        --footnote-text-color: var(--input-field-content-color);
-        --field-border-weight: 2;
-        --control-background-color-01: var(--input-control-selected);
-        --control-background-color-02: var(--input-control-selected);
-        --control-background-color-03: var(--input-control-icon-button-selected);
-        --control-indicator-color-01: var(--input-control-color-02);
-        --control-indicator-color-02: var(--input-control-color-03);
-        --control-indicator-color-03: var(--input-control-color-01);
-        --control-knob-background-color: var(--input-control-color-02);
-        --control-text-color: var(--input-control-color-02);
-        --error-message-text: #00000000;
-        --selected-display-icon: var(--input-value-content-color);
-        --input-control-action-background-color: var(--input-control-icon-button-selected);
-        --knob-background-color: var(--input-control-color-01);
-        --control-overlay: #FFFFFF00;
-
-    }
-
-
-
-/* VARIATION TOKENS */ 
+/* VARIATION TOKENS */
 
 /*
 --color-background-color: var(--input-background-color);

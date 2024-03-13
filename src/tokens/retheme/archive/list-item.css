@@ -1,0 +1,191 @@
+:root { 
+
+    /* L1: Base List Item Tokens */ 
+
+    --list-item-text-color-01: var(--text-color-01);
+    --list-item-text-color-02: var(--text-color-02);
+    --list-item-border-color-01: var(--border-color-01);
+    --list-item-border-color-02: var(--border-color-06);
+    --list-item-border-color-03: var(--neutral-darkest);
+    --list-item-background-color: var(--ui-background-01);
+    --list-item-background-color-interactive: var(--ui-background-01);
+    --list-item-interactive-overlay-color-01: var(--interactive-overlay-02);
+    --list-item-interactive-overlay-color-02: var(--interactive-overlay-semantic);
+    --list-item-background-color-selected: var(--selected-01);
+    --list-item-divider: var(--border-color-06);
+    --list-item-indicator-fill-color: var(--semantic-02);
+    --list-item-background-color-error: var(--error-lightest);
+    --list-item-content-color-01: var(--neutral01-light);
+    --list-item-content-color-02: var(--icon-color-03);
+    --list-item-content-color-03: var(--semantic-light);
+    --list-item-border-radius-small: var(--border-radius-x-small);
+    --list-item-indicator-02: var(--semantic-lighter);
+
+
+    /* L2: Size Dependent Tokens */ 
+
+    --list-item-title-text-color: var(--list-item-text-color-01);
+    --list-item-title-font-size: var(--font-size-200);
+    --list-item-title-line-height: var(--line-height-150);
+    --list-item-title-gap: var(--space-x-small);
+    --list-item-title-font-weight: var(--font-weight-500);
+    --list-item-title-padding: var(--space-none);
+    --list-item-subtitle-text-color: var(--list-item-text-color-02);
+    --list-item-subtitle-font-size: var(--font-size-200);
+    --list-item-subtitle-line-height: var(--line-height-150);
+    --list-item-subtitle-gap: var(--space-x-small);
+    --list-item-subtitle-font-weight: var(--font-weight-500);
+    --list-item-subtitle-padding: var(--space-xx-small);
+    --list-item-border-color: var(--list-item-border-color-01);
+    --list-item-divider-border-color: #FFFFFF00;
+    --list-item-border-radius: var(--border-radius-small);
+    --list-item-padding-vertical: var(--space-base);
+    --list-item-padding-horizontal: var(--space-medium);
+    --list-item-gap: var(--space-medium);
+    --list-item-interactive-padding-vertical: var(--space-base);
+
+
+    /* L2: List Item Interaction */ 
+
+    --list-item-interaction-elevation-y: 0;
+    --list-item-interaction-elevation-spread: 0;
+    --list-item-interaction-elevation-blur: 0;
+    --list-item-interaction-background-color-selected: var(--list-item-background-color);
+    --border-color: #FFFFFF00;
+
+
+    /* L2: List Item State Tokens */ 
+    
+    --list-item-interactive-background-color: var(--list-item-background-color-interactive);
+    --list-item-overlay: var(--list-item-interactive-overlay-color-01);
+    --compact-border-color-drag: #FFFFFF00;
+    --navigation-background-color: var(--list-item-background-color-interactive);
+
+    
+
+
+}
+
+
+/* SIZE TOKENS */
+
+.compact{
+
+    --list-item-title-text-color: var(--list-item-text-color-01);
+    --list-item-title-font-size: var(--font-size-100);
+    --list-item-title-line-height: var(--line-height-125);
+    --list-item-title-gap: var(--space-xx-small);
+    --list-item-title-font-weight: var(--font-weight-500);
+    --list-item-title-padding: var(--space-xx-small);
+    --list-item-subtitle-text-color: var(--list-item-text-color-02);
+    --list-item-subtitle-font-size: var(--font-size-100);
+    --list-item-subtitle-line-height: var(--line-height-125);
+    --list-item-subtitle-gap: var(--space-xx-small);
+    --list-item-subtitle-font-weight: var(--font-weight-500);
+    --list-item-subtitle-padding: var(--space-x-small);
+    --list-item-border-color: var(--compact-border-color-drag);
+    --list-item-divider-border-color: var(--list-item-divider);
+    --list-item-border-radius: 0;
+    --list-item-padding-vertical: var(--space-small);
+    --list-item-padding-horizontal: var(--space-base);
+    --list-item-gap: var(--space-base);
+    --list-item-interactive-padding-vertical: var(--space-small);
+}
+
+/*-------------------------*/ 
+
+
+/* INTERACTION TOKENS */ 
+.selectable{
+    --list-item-interaction-elevation-y: 0;
+    --list-item-interaction-elevation-spread: 0;
+    --list-item-interaction-elevation-blur: 0;
+    --list-item-interaction-background-color-selected: var(--list-item-background-color);
+    --border-color: #FFFFFF00;
+    }
+
+
+.draggable{
+    --list-item-interaction-elevation-y: var(--elevation-y-drop-shadow-06);
+    --list-item-interaction-elevation-spread: var(--elevation-spread-drop-shadow-06);
+    --list-item-interaction-elevation-blur: var(--elevation-blur-drop-shadow-06);
+    --list-item-interaction-background-color-selected: var(--list-item-background-color-selected);
+    --border-color: var(--list-item-border-color-01);
+    }   
+
+
+/*------------------------*/ 
+
+/* STATE TOKENS */ 
+
+.selected{
+    --list-item-interactive-background-color: var(--list-item-interaction-background-color-selected);
+    --list-item-overlay: var(--list-item-interactive-overlay-color-02);
+    --compact-border-color-drag: var(--border-color);
+    --navigation-background-color: var(--list-item-background-color-selected);
+}
+
+.error{
+    --list-item-interactive-background-color: var(--list-item-background-color-error);
+    --list-item-overlay: var(--interactive-overlay-03);
+    --compact-border-color-drag: var(--list-item-border-color-01);
+    --navigation-background-color: var(--list-item-background-color-error);
+}
+
+
+/* Variation Tokens */ 
+
+/* 
+
+--categorical-list-item-background-color: var(--list-item-background-color);
+--categorical-list-item-border-color: var(--list-item-border-color);
+--categorical-list-item-border-radius: var(--list-item-border-radius);
+--interactive-list-item-border-radius: var(--list-item-border-radius);
+--categorical-list-item-divider-border-color: var(--list-item-divider-border-color);
+--categorical-list-item-title-text-color: var(--list-item-text-color-01);
+--categorical-list-item-title-font-size: var(--list-item-title-font-size);
+--categorical-list-item-title-font-weight: var(--list-item-title-font-weight);
+--categorical-list-item-title-line-height: var(--list-item-title-line-height);
+--interactive-list-item-title-font-size: var(--list-item-title-font-size);
+--interactive-list-item-title-font-weight: var(--list-item-title-font-weight);
+--interactive-list-item-title-line-height: var(--list-item-title-line-height);
+--categorical-list-item-title-gap: var(--list-item-title-gap);
+--interactive-list-item-subtitle-font-size: var(--list-item-subtitle-font-size);
+--interactive-list-item-subtitle-font-weight: var(--list-item-subtitle-font-weight);
+--interactive-list-item-subtitle-line-height: var(--list-item-subtitle-line-height);
+--categorical-list-item-padding-vertical: var(--list-item-padding-vertical);
+--categorical-list-item-padding-horizontal: var(--list-item-padding-horizontal);
+--interactive-list-item-padding-vertical: var(--list-item-interactive-padding-vertical);
+--interactive-list-item-padding-horizontal: var(--list-item-padding-horizontal);
+--interactive-list-item-gap: var(--list-item-gap);
+--categorical-list-item-subtitle-text-color: var(--list-item-text-color-01);
+--categorical-list-item-subtitle-font-size: var(--list-item-title-font-size);
+--categorical-list-item-subtitle-font-weight: var(--list-item-title-font-weight);
+--categorical-list-item-subtitle-line-height: var(--list-item-title-line-height);
+--ghost-list-item-title-text-color: var(--list-item-text-color-01);
+--ghost-list-item-divider-border-color: var(--list-item-divider-border-color);
+--ghost-list-item-title-font-size: var(--list-item-title-font-size);
+--ghost-list-item-title-font-weight: var(--list-item-title-font-weight);
+--ghost-list-item-title-line-height: var(--list-item-title-line-height);
+--ghost-list-item-title-gap: var(--list-item-title-gap);
+--interactive-list-item-background-color: var(--list-item-interactive-background-color);
+--interactive-list-item-title-text-color: var(--list-item-text-color-01);
+--ghost-list-item-padding-vertical: var(--list-item-padding-vertical);
+--ghost-list-item-padding-horizontal: var(--list-item-padding-horizontal);
+--interactive-list-item-subtitle-text-color: var(--list-item-text-color-02);
+--ghost-list-item-subtitle-text-color: var(--list-item-text-color-01);
+--progress-list-item-divider-border-color: var(--list-item-divider);
+--interactive-list-item-overlay-color: var(--list-item-overlay);
+--progress-list-item-title-text-color: var(--list-item-text-color-01);
+--ghost-list-item-subtitle-font-size: var(--list-item-title-font-size);
+--progress-list-item-subtitle-text-color: var(--list-item-text-color-02);
+--progress-list-item-background-color: var(--list-item-interactive-background-color);
+--progress-list-item-overlay-color: var(--list-item-overlay);
+--ghost-list-item-subtitle-font-weight: var(--list-item-title-font-weight);
+--ghost-list-item-subtitle-line-height: var(--list-item-title-line-height);
+--progress-list-item-background-color-selected: var(--selected-01);
+--progress-list-item-indicator-background-color: var(--list-item-indicator-fill-color);
+--progress-list-item-indicator-highlight: var(--indicator-02);
+--interactive-list-item-icon-color: var(--list-item-content-color-02);
+--nav-item-border-radius: var(--border-radius-small);
+*/ 

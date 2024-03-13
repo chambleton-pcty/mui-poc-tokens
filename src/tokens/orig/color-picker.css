@@ -1,0 +1,55 @@
+/* Using 'color picker' to demonstrate two options for imhow our token naming works and how it was intended to translate to styling.*/ 
+/* You could also continue to use the tokens and build them into the component values if you would like, there is a lot of flexibility in how it could be implemented, but wanted to at least explain the idea*/ 
+
+
+/* ------------ COLOR PICKER ------------- */ 
+/* Token Values */ 
+
+/*
+--color-picker-background-color: var(--input-background-color);
+--color-picker-swatch-height: var(--space-x-large);
+--color-picker-swatch-width: var(--space-x-large);
+--color-picker-swatch-border-radius: var(--border-radius-x-small);
+--color-picker-border-color: var(--input-container-border-color);
+--color-picker-border-radius: var(--border-radius-small);
+--color-picker-padding: var(--space-base);
+*/ 
+
+
+
+/* ------------ METHOD 1  ------------- */ 
+
+
+.color-picker { 
+    background-color: var(--input-background-color);
+    border-color: var(--input-container-border-color);
+    border-radius: var(--border-radius-small);
+    padding: var(--space-base);
+}
+
+.color-picker-swatch{
+    height: var(--space-x-large);
+    width: var(--space-x-large);
+    border-radius: var(--border-radius-x-small);
+}
+
+
+/* ------------ METHOD 2  ------------- */ 
+/* method 2 would make it so that we can easily make updates by just redefining token values */ 
+
+.color-picker { 
+    background-color: var(--color-picker-background-color);
+    border-color: var(--color-picker-border-color);
+    border-radius: var(--color-picker-border-radius);
+    padding: var(--color-picker-padding);
+}
+
+.color-picker-swatch{
+    height: var(--color-picker-swatch-height);
+    width: var(--color-picker-swatch-width);
+    border-radius: var(--color-picker-border-radius);
+}
+
+
+
+
