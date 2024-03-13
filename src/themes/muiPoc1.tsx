@@ -1,8 +1,11 @@
-import "../tokens/foundation-bundle.css";
-//import "../tokens/poc/retheme-bundle.css";
+import "../tokens/poc1/foundation-bundle.css";
+//import "../tokens/poc1/retheme-bundle.css";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 export const muiPoc1 = {
+  typography: {
+    fontFamily: "'Open Sans', 'Arial', 'sans-serif'",
+  },
   components: {
     MuiButtonBase: {
       defaultProps: {
@@ -33,7 +36,6 @@ export const muiPoc1 = {
         },
       },
     },
-
     MuiSnackbarContent: {
       styleOverrides: {
         root: {
@@ -63,6 +65,9 @@ export const muiPoc1 = {
       defaultProps: {
         inputProps: {
           style: {
+            border: "1px solid var(--input-border-color)",
+            borderRadius: "calc(var(--border-radius-small) * 1px)",
+            color: "var(--input-field-content-color)",
             padding: 0,
             paddingLeft:
               "calc((var(--value-base) - var(--value-x-small)) * 1px)",
@@ -84,6 +89,7 @@ export const muiPoc1 = {
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
+          border: 0,
           borderRadius: "calc(var(--border-radius-small) * 1px)",
           color: "var(--input-field-content-color)",
         },
@@ -98,6 +104,7 @@ export const muiPoc1 = {
           // "& :hover .MuiOutlinedInput-root": {
           //   borderColor: "#FF00BB", // Change this to the desired hover border color
           // },
+
           "& .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline":
             {
               borderColor: "var(--input-border-color-error)",

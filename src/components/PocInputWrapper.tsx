@@ -3,7 +3,7 @@ import InputLabel from "@mui/material/InputLabel";
 
 const PocInputWrapper = ({ label, children }) => {
   return (
-    <Box sx={{ margin: 2 }}>
+    <Box sx={{ marginBottom: "calc(var(--space-large) * 1px)" }}>
       <InputLabel>{label}</InputLabel>
       <Box>{children}</Box>
     </Box>

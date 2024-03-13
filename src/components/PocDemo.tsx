@@ -3,8 +3,8 @@ import PocInput from "./PocInput";
 import PocSelect from "./PocSelect";
 import PocInputWrapper from "./PocInputWrapper";
 import PocButton from "./PocButton";
-import { Box } from "@mui/material";
 import PocFeedback from "./PocFeedback";
+import PocBox from "./PocBox";
 
 const PocDemo = () => {
   const emptyValidation = { state: "", field: "", message: "", key: "" };
@@ -121,86 +121,90 @@ const PocDemo = () => {
   };
 
   return (
-    <div style={{ margin: 40, width: 500 }}>
-      <PocInputWrapper label="Full Name">
-        <PocInput
-          onChange={(e) => setFullName(e.target.value)}
-          placeholder="Employee Name"
-          value={fullName}
-          error={validation.field === "name"}
-          helperText={validation.field === "name" ? "Valid name required" : ""}
-        />
-      </PocInputWrapper>
-      <hr style={{ margin: 15 }} />
-      <PocInputWrapper label="Suffix">
-        <PocSelect
-          value={suffix}
-          onChange={(e) => {
-            setSuffix(e.target.value);
-          }}
-          options={[
-            { label: "Mr", value: 1 },
-            { label: "Mrs", value: 2 },
-            { label: "Ms", value: 3 },
-          ]}
-          error={validation.field === "suffix"}
-          helperText={validation.field === "suffix" ? "Choose a suffix" : ""}
-        />
-      </PocInputWrapper>
+    <div style={{ margin: 40, width: 600 }}>
+      <PocBox>
+        <PocInputWrapper label="Full Name">
+          <PocInput
+            onChange={(e) => setFullName(e.target.value)}
+            placeholder="Employee Name"
+            value={fullName}
+            error={validation.field === "name"}
+            helperText={
+              validation.field === "name" ? "Valid name required" : ""
+            }
+          />
+        </PocInputWrapper>
+        <hr style={{ margin: "0px 0px 28px 0px" }} />
+        <PocInputWrapper label="Suffix">
+          <PocSelect
+            value={suffix}
+            onChange={(e) => {
+              setSuffix(e.target.value);
+            }}
+            options={[
+              { label: "Mr", value: 1 },
+              { label: "Mrs", value: 2 },
+              { label: "Ms", value: 3 },
+            ]}
+            error={validation.field === "suffix"}
+            helperText={validation.field === "suffix" ? "Choose a suffix" : ""}
+          />
+        </PocInputWrapper>
 
-      <PocInputWrapper label="Email">
-        <PocInput
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="email@email.com"
-          value={email}
-          error={validation.field === "email"}
-          helperText={
-            validation.field === "email" ? "Valid email required" : ""
-          }
-        />
-      </PocInputWrapper>
+        <PocInputWrapper label="Email">
+          <PocInput
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="email@email.com"
+            value={email}
+            error={validation.field === "email"}
+            helperText={
+              validation.field === "email" ? "Valid email required" : ""
+            }
+          />
+        </PocInputWrapper>
 
-      <PocInputWrapper label="Phone Number">
-        <PocInput
-          onChange={(e) => setPhone(e.target.value)}
-          placeholder="555-555-5555"
-          value={phone}
-          error={validation.field === "phone"}
-          helperText={
-            validation.field === "phone" ? "Valid phone required" : ""
-          }
-        />
-      </PocInputWrapper>
+        <PocInputWrapper label="Phone Number">
+          <PocInput
+            onChange={(e) => setPhone(e.target.value)}
+            placeholder="555-555-5555"
+            value={phone}
+            error={validation.field === "phone"}
+            helperText={
+              validation.field === "phone" ? "Valid phone required" : ""
+            }
+          />
+        </PocInputWrapper>
 
-      <Box sx={{ float: "right", marginRight: 2 }}>
-        {validation?.state !== "valid" ? (
-          <>
-            <PocButton
-              disabled={!hasContent()}
-              variant="outlined"
-              onClick={onClear}
-            >
-              Cancel
+        <div style={{ textAlign: "right", marginRight: 2 }}>
+          {validation?.state !== "valid" ? (
+            <>
+              <PocButton
+                disabled={!hasContent()}
+                variant="outlined"
+                onClick={onClear}
+              >
+                Cancel
+              </PocButton>
+
+              <PocButton disabled={!hasContent()} onClick={onAddEmployee}>
+                Add Employee
+              </PocButton>
+            </>
+          ) : (
+            <PocButton disabled={!hasContent()} onClick={() => resetFields()}>
+              Reset Form
             </PocButton>
+          )}
+        </div>
 
-            <PocButton disabled={!hasContent()} onClick={onAddEmployee}>
-              Add Employee
-            </PocButton>
-          </>
-        ) : (
-          <PocButton disabled={!hasContent()} onClick={() => resetFields()}>
-            Reset Form
-          </PocButton>
+        {validation?.state?.length > 1 && (
+          <PocFeedback
+            message={validation.message}
+            type={validation.state}
+            key={validation.key}
+          />
         )}
-      </Box>
-
-      {validation?.state?.length > 1 && (
-        <PocFeedback
-          message={validation.message}
-          type={validation.state}
-          key={validation.key}
-        />
-      )}
+      </PocBox>
     </div>
   );
 };
