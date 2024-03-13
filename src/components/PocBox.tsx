@@ -8,7 +8,7 @@ const PocBox = (props) => {
     border: "1px solid var(--border-color-01, #DFE4E8)",
     boxShadow: "0px 2px 4px 0.5px rgba(50, 62, 72, 0.08)",
   };
-  console.log(styles);
+
   return <Box {...props} component="section" sx={styles} />;
 };
 

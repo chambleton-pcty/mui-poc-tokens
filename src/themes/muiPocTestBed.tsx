@@ -1,6 +1,3 @@
-import "../tokens/poc1/foundation-bundle.css";
-//import "../tokens/poc1/retheme-bundle.css";
-
 export const muiPocTestBed = {
   components: {
     MuiButtonBase: {
