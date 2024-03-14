@@ -142,9 +142,10 @@ const PocDemo = () => {
               setSuffix(e.target.value);
             }}
             options={[
-              { label: "Mr", value: 1 },
-              { label: "Mrs", value: 2 },
-              { label: "Ms", value: 3 },
+              { label: "Jr", value: 1 },
+              { label: "Sr", value: 2 },
+              { label: "III", value: 3 },
+              { label: "IV", value: 4 },
             ]}
             error={validation.field === "suffix"}
             helperText={validation.field === "suffix" ? "Choose a suffix" : ""}
