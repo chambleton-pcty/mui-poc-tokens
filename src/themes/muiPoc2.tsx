@@ -116,7 +116,7 @@ export const muiPoc2 = {
         root: {
           "text-transform": "none",
           boxShadow: "none",
-          borderRadius: "calc(var(--borderradiusmd) * 1px)",
+          borderRadius: "calc(var(--borderradiusbase) * 1px)",
           fontSize: "calc(var(--2) * 1px)",
           height: "calc(var(--4) * 1px)",
           marginRight: "calc(var(--1) * 1px)",
