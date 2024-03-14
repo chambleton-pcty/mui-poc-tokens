@@ -5,6 +5,13 @@ import { muiPoc2 } from "../themes/muiPoc2";
 import { muiPocTestBed } from "../themes/muiPocTestBed";
 import { useState } from "react";
 
+import {
+  Experimental_CssVarsProvider as CssVarsProvider,
+  experimental_extendTheme as extendTheme,
+} from "@mui/material/styles";
+import PocInputWrapper from "./PocInputWrapper";
+import PocSelect from "./PocSelect";
+
 const ThemeSwitcher = ({ children }) => {
   const themes = [
     { label: "default MUI", value: "default" },
@@ -15,7 +22,7 @@ const ThemeSwitcher = ({ children }) => {
 
   const muiBaseTheme = createTheme(muiBase);
   const poc1Theme = createTheme(muiPoc1);
-  const poc2Theme = createTheme(muiPoc2);
+  const poc2Theme = extendTheme(muiPoc2); // extend not create!
   const muiPocTestBedTheme = createTheme(muiPocTestBed);
 
   const [selectedTheme, setSelectedTheme] = useState("default");
@@ -23,36 +30,38 @@ const ThemeSwitcher = ({ children }) => {
 
   const showThemes = () => {
     return (
-      <>
-        Theme: &nbsp;
-        <select
-          value={selectedTheme}
-          onChange={(e) => {
-            setTheme(
-              e.target.value === "poc1"
-                ? (poc1Theme as any)
-                : e.target.value === "poc2"
-                ? poc2Theme
-                : e.target.value === "testbed"
-                ? muiPocTestBedTheme
-                : muiBase
-            );
-            setSelectedTheme(e.target.value);
-          }}
-        >
-          {themes.map((t) => (
-            <option value={t.value}>{t.label}</option>
-          ))}
-        </select>
-        <br /> <br />
-      </>
+      <div style={{ width: 300, float: "right", marginRight: 50 }}>
+        <PocInputWrapper label="Theme">
+          <PocSelect
+            value={selectedTheme}
+            onChange={(e) => {
+              setTheme(
+                e.target.value === "poc1"
+                  ? (poc1Theme as any)
+                  : e.target.value === "poc2"
+                  ? poc2Theme
+                  : e.target.value === "testbed"
+                  ? muiPocTestBedTheme
+                  : muiBase
+              );
+              setSelectedTheme(e.target.value);
+            }}
+            options={themes}
+          />
+        </PocInputWrapper>
+      </div>
     );
   };
 
   return (
     <>
       {showThemes()}
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+      {selectedTheme === "poc2" ? (
+        // need to use CssVarsProvider when replacing MUI variables!
+        <CssVarsProvider theme={theme as any}>{children}</CssVarsProvider>
+      ) : (
+        <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      )}
     </>
   );
 };

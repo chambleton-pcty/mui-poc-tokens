@@ -2,7 +2,13 @@ import { FormHelperText } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 
-const PocSelect = ({ options, value, onChange, error, helperText }) => {
+const PocSelect = ({
+  options,
+  value,
+  onChange,
+  error = false,
+  helperText = "",
+}) => {
   return (
     <>
       <Select
@@ -11,10 +17,11 @@ const PocSelect = ({ options, value, onChange, error, helperText }) => {
         error={error}
         fullWidth
         renderValue={(value) => {
-          if (value === "empty") {
+          const index = options?.findIndex((x) => x.value === value);
+          if (value === "empty" || !options || index < 0) {
             return <span style={{ color: "#A8B2BA" }}>--select--</span>;
           }
-          return options[value - 1].label;
+          return options[index]?.label;
         }}
       >
         {options &&

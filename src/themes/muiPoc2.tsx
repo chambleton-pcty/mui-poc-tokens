@@ -1,10 +1,109 @@
 import "../tokens/poc2/mui-bundle.css";
-//import "../tokens/poc1/retheme-bundle.css";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 export const muiPoc2 = {
   typography: {
     fontFamily: "'Open Sans', 'Arial', 'sans-serif'",
+  },
+  palette: {
+    primary: {
+      main: "var(--primary-main)",
+      light: "var(--primary-light)",
+      dark: "var(--primary-dark)",
+      contrastText: "var(--primary-contrast)",
+      states: {
+        hover: "var(--primary-_states-hover)",
+        selected: "var(--primary-_states-selected)",
+        focus: "var(--primary-_states-focus)",
+        focusVisible: "var(--primary-_states-focusvisible)",
+        outlinedBorder: "var(--primary-_states-outlinedborder)",
+        focusVisibleOuterBorder:
+          "var(--primary-_states-focusvisibleouterborder)",
+        focusVisibleInnerBorder:
+          "var(--primary-_states-focusvisibleinnerborder)",
+      },
+    },
+    secondary: {
+      main: "var(--secondary-main)",
+      light: "var(--secondary-light)",
+      dark: "var(--secondary-dark)",
+      contrastText: "var(--secondary-contrast)",
+      states: {
+        hover: "var(--secondary-_states-hover)",
+        selected: "var(--secondary-_states-selected)",
+        focus: "var(--secondary-_states-focus)",
+        focusVisible: "var(--secondary-_states-focusvisible)",
+        outlinedBorder: "var(--secondary-_states-outlinedborder)",
+      },
+    },
+    error: {
+      main: "var(--error-main)",
+      light: "var(--error-light)",
+      dark: "var(--error-dark)",
+      contrastText: "var(--error-contrast)",
+      states: {
+        hover: "var(--error-_states-hover)",
+        selected: "var(--error-_states-selected)",
+        focusVisible: "var(--error-_states-focusvisible)",
+        outlinedBorder: "var(--error-_states-outlinedborder)",
+      },
+    },
+    warning: {
+      main: "var(--warning-main)",
+      light: "var(--warning-light)",
+      dark: "var(--warning-dark)",
+      contrastText: "var(--warning-contrast)",
+      states: {
+        hover: "var(--warning-_states-hover)",
+        selected: "var(--warning-_states-selected)",
+        focusVisible: "var(--warning-_states-focusvisible)",
+        outlinedBorder: "var(--warning-_states-outlinedborder)",
+      },
+    },
+    info: {
+      main: "var(--info-main)",
+      light: "var(--info-light)",
+      dark: "var(--info-dark)",
+      contrastText: "var(--info-contrast)",
+      states: {
+        hover: "var(--info-_states-hover)",
+        selected: "var(--info-_states-selected)",
+        focusVisible: "var(--info-_states-focusvisible)",
+        outlinedBorder: "var(--info-_states-outlinedborder)",
+      },
+    },
+    success: {
+      main: "var(--success-main)",
+      light: "var(--success-light)",
+      dark: "var(--success-dark)",
+      contrastText: "var(--success-contrast)",
+      states: {
+        hover: "var(--success-_states-hover)",
+        selected: "var(--success-_states-selected)",
+        focusVisible: "var(--success-_states-focusvisible)",
+        outlinedBorder: "var(--success-_states-outlinedborder)",
+      },
+    },
+    text: {
+      primary: "var(--text-primary)",
+      secondary: "var(--text-secondary)",
+      disabled: "var(--text-disabled)",
+      divider: "var(--divider)",
+      states: {
+        hover: "var(--text-_states-hover)",
+        selected: "var(--text-_states-selected)",
+        focus: "var(--text-_states-focus)",
+        focusVisible: "var(--text-_states-focusvisible)",
+      },
+    },
+    action: {
+      active: "var(--action-active)",
+      hover: "var(--action-hover)",
+      selected: "var(--action-selected)",
+      disabled: "var(--action-disabled)",
+      disabledBackground: "var(--action-disabledbackground)",
+      focus: "var(--action-focus)",
+    },
   },
   components: {
     MuiButtonBase: {
@@ -17,20 +116,15 @@ export const muiPoc2 = {
         root: {
           "text-transform": "none",
           boxShadow: "none",
-          backgroundColor: "var(--button-background-color)",
-          borderColor: "var(--button-border-color)",
-          borderRadius: "calc(var(--button-border-radius) * 1px)",
-          color: "var(--button-text-color)",
-          fontSize: "calc(var(--button-font-size) * 1px)",
-          fontWeight: "var(--button-font-weight)",
-          height: "calc(var(--button-height) * 1px)",
-          marginRight: "calc(var(--button-gap) * 1px)",
+          borderRadius: "calc(var(--borderradiusmd) * 1px)",
+          fontSize: "calc(var(--2) * 1px)",
+          height: "calc(var(--4) * 1px)",
+          marginRight: "calc(var(--1) * 1px)",
           "&:focus-visible": {
             boxShadow: "none",
             outline: "-webkit-focus-ring-color auto 1px",
           },
           "&:hover": {
-            backgroundColor: "rgba(50, 62, 72, 0.08) 0px 2px 4px 0.5px",
             boxShadow: "none",
           },
         },
@@ -39,8 +133,8 @@ export const muiPoc2 = {
     MuiSnackbarContent: {
       styleOverrides: {
         root: {
-          backgroundColor: "var(--semantic-default)",
-          color: "var(--semantic-tint)",
+          backgroundColor: "var(--_components-alert-info-background)",
+          color: "var(--_components-alert-info-color)",
         },
       },
     },
@@ -48,8 +142,8 @@ export const muiPoc2 = {
       styleOverrides: {
         root: {
           border: "1px solid",
-          borderColor: "var(--input-border-color)",
-          borderRadius: "calc(var(--border-radius-small) * 1px)",
+          borderColor: "var(--grey-400)",
+          borderRadius: "calc(var(--borderradiusmd) * 1px)",
           boxShadow: "none",
         },
       },
@@ -57,7 +151,7 @@ export const muiPoc2 = {
     MuiMenuItem: {
       styleOverrides: {
         root: {
-          backgroundColor: "var(--input-background-color)",
+          backgroundColor: "var(--background-default)",
         },
       },
     },
@@ -65,13 +159,10 @@ export const muiPoc2 = {
       defaultProps: {
         inputProps: {
           style: {
-            border: "1px solid var(--input-border-color)",
-            borderRadius: "calc(var(--border-radius-small) * 1px)",
-            color: "var(--input-field-content-color)",
+            borderRadius: "calc(var(--borderradiusmd) * 1px)",
             padding: 0,
-            paddingLeft:
-              "calc((var(--value-base) - var(--value-x-small)) * 1px)",
-            height: "calc(var(--size-x-large) * 1px)",
+            paddingLeft: "calc((var(--4) - var(--2)) * 1px)",
+            height: "calc(var(--5) * 1px)",
           },
         },
       },
@@ -79,10 +170,9 @@ export const muiPoc2 = {
     MuiInputLabel: {
       styleOverrides: {
         root: {
-          fontSize: "calc(var(--font-size-075) * 1px)",
-          fontWeight: "var(--font-weight-200)",
-          color: "var(--input-placeholder-text-color:)",
-          marginBottom: "calc(var(--value-x-small) * 1px)",
+          fontSize: "14px",
+          fontWeight: "bold",
+          marginBottom: "calc(var(--1) * 1px)",
         },
       },
     },
@@ -90,11 +180,7 @@ export const muiPoc2 = {
       styleOverrides: {
         root: {
           border: 0,
-          borderRadius: "calc(var(--border-radius-small) * 1px)",
-          color: "var(--input-field-content-color)",
-        },
-        notchedOutline: {
-          borderColor: "var(--input-border-color)",
+          borderRadius: "calc(var(--borderradiusmd) * 1px)",
         },
       },
     },
@@ -107,8 +193,7 @@ export const muiPoc2 = {
 
           "& .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline":
             {
-              borderColor: "var(--input-border-color-error)",
-              borderWidth: "calc(var(--size-xx-small) * 1px)",
+              borderWidth: "calc(var(--1)/4 * 1px)",
             },
         },
       },
@@ -119,17 +204,17 @@ export const muiPoc2 = {
       },
       styleOverrides: {
         root: {
-          height: "calc(var(--size-x-large) * 1px)",
-          color: "var(--input-field-content-color)",
+          // height: "calc(var(--3) * 1px)",
+          //color: "var(--input-field-content-color)",
         },
         select: {
-          padding: "calc(var(--size-base) * 1px)",
-          paddingLeft: "calc((var(--value-base) - var(--value-x-small)) * 1px)",
+          padding: "calc(var(--1) * 1px)",
+          paddingLeft: "calc(var(--2) * 1px)",
         },
         icon: {
-          height: "calc(var(--size-large) * 1px)",
-          width: "calc(var(--size-large) * 1px)",
-          top: "calc(var(--value-x-small) * 1px)",
+          height: "calc(var(--4) * 1px)",
+          width: "calc(var(--4) * 1px)",
+          top: "calc(var(--1) / 2 * 1px)",
         },
       },
     },

@@ -81,7 +81,7 @@ export const muiPoc1 = {
         root: {
           fontSize: "calc(var(--font-size-075) * 1px)",
           fontWeight: "var(--font-weight-200)",
-          color: "var(--input-placeholder-text-color:)",
+          color: "var(--input-placeholder-text-color)",
           marginBottom: "calc(var(--value-x-small) * 1px)",
         },
       },
