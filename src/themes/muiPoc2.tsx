@@ -159,6 +159,7 @@ export const muiPoc2 = {
       defaultProps: {
         inputProps: {
           style: {
+            border: "1px solid var(--_components-input-outlined-enabledborder)",
             borderRadius: "calc(var(--borderradiusmd) * 1px)",
             padding: 0,
             paddingLeft: "calc((var(--4) - var(--2)) * 1px)",
@@ -205,9 +206,10 @@ export const muiPoc2 = {
       styleOverrides: {
         root: {
           // height: "calc(var(--3) * 1px)",
-          //color: "var(--input-field-content-color)",
+          // color: "var(--input-field-content-color)",
         },
         select: {
+          border: "1px solid var(--_components-input-outlined-enabledborder)",
           padding: "calc(var(--1) * 1px)",
           paddingLeft: "calc(var(--2) * 1px)",
         },
