@@ -1,0 +1,5 @@
+.poc3-tokens {
+  /* ADDED FOR POC 3!*/
+  --border-radius-small: var(--value-base);
+  --input-border-color: var(--border-color-01);
+}

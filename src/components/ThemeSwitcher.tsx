@@ -2,6 +2,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { muiBase } from "../themes/muiBase";
 import { muiPoc1 } from "../themes/muiPoc1";
 import { muiPoc2 } from "../themes/muiPoc2";
+import { muiPoc3 } from "../themes/muiPoc3";
 import { muiPocTestBed } from "../themes/muiPocTestBed";
 import { useState } from "react";
 
@@ -17,12 +18,14 @@ const ThemeSwitcher = ({ children }) => {
     { label: "default MUI", value: "default" },
     { label: "POC 1", value: "poc1" },
     { label: "POC 2", value: "poc2" },
+    { label: "POC 3", value: "poc3" },
     { label: "MUI TestBed", value: "testbed" },
   ];
 
   const muiBaseTheme = createTheme(muiBase);
   const poc1Theme = createTheme(muiPoc1);
   const poc2Theme = extendTheme(muiPoc2); // extend not create!
+  const poc3Theme = createTheme(muiPoc3);
   const muiPocTestBedTheme = createTheme(muiPocTestBed);
 
   const [selectedTheme, setSelectedTheme] = useState("default");
@@ -40,6 +43,8 @@ const ThemeSwitcher = ({ children }) => {
                   ? (poc1Theme as any)
                   : e.target.value === "poc2"
                   ? poc2Theme
+                  : e.target.value === "poc3"
+                  ? poc3Theme
                   : e.target.value === "testbed"
                   ? muiPocTestBedTheme
                   : muiBase
@@ -60,7 +65,11 @@ const ThemeSwitcher = ({ children }) => {
         // need to use CssVarsProvider when replacing MUI variables!
         <CssVarsProvider theme={theme as any}>{children}</CssVarsProvider>
       ) : (
-        <ThemeProvider theme={theme}>{children}</ThemeProvider>
+        <ThemeProvider theme={theme}>
+          <div className={selectedTheme === "poc3" ? "poc3-tokens" : ""}>
+            {children}
+          </div>
+        </ThemeProvider>
       )}
     </>
   );
